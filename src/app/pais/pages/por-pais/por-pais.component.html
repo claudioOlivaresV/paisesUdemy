@@ -5,6 +5,11 @@
         <app-pais-input (onEnter)=" buscar( $event )" (onDebounce)="sugerencias($event)" placeholder="Buscar país"></app-pais-input>
     </div>
 </div>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action" (click)="buscar(pais.name)"  role="button" *ngFor="let pais of paisesSugerencias">
+       {{pais.name}}
+    </li>
+</ul>
 <hr>
 
 <div class="alert alert-danger" *ngIf="hayError && termino.length">
